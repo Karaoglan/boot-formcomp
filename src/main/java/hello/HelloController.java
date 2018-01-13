@@ -1,14 +1,22 @@
 package hello;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 public class HelloController {
-    
+
+    @Autowired
+    SeleniumAutoCompleteHandler autoCompleteHandler;
+
     @RequestMapping("/")
-    public String index() {
-        return "Greetings from Spring Boot!";
+    public String index(@RequestBody Model model) {
+
+        autoCompleteHandler.handle(model);
+
+        return "successfully autocompleted";
     }
     
 }
