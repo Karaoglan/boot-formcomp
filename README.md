@@ -15,3 +15,6 @@ for post model has to be sent
 	"name": "burak"
 	...
 }
+
+to make a windows service
+https://dzone.com/articles/spring-boot-as-a-windows-service-in-5-minutes
